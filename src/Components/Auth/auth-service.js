@@ -25,7 +25,7 @@ class AuthService {
             .then(response => response.data)
     }
     login = (email, password) => {
-        console.log("Mas que merda falta aqui?", email, password)
+        console.log("AQUI", email, password)
         return this.service
             .post('/login', { email, password })
             .then(response => response.data)

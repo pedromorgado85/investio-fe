@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  justify-content: stretch;
+}
+
+.comboBoxes {
+  display : block;
+}
+
+.Navbar{
+  justify-content: end;
 }
 
 .App-logo {
@@ -35,4 +44,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-style {
+  border-left-style: none;
+  justify-content: right;
 }
