@@ -18,6 +18,7 @@ class Login extends Component {
                     password: ""
                 });
                 this.props.getUser(response);
+                this.props.history.push(`/user-profile/${response._id}`)
             })
             .catch(error => console.log(error))
     }
@@ -36,7 +37,7 @@ class Login extends Component {
                     <label>Password:</label>
                     <input name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
 
-                    <input type="submit" value="Login" />
+                    <input type="submit" className="btn btn-primary" value="Login" />
                 </form>
                 <p>Don't have account?
             <Link to={"/signup"}> Signup</Link>

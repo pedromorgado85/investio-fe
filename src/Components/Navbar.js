@@ -25,9 +25,9 @@ class Navbar extends Component {
                 <nav className="nav-style">
                     <ul>
                         <li>Welcome, {this.state.loggedInUser.email}</li>
-                        <li><Link to='/user-profile' style={{ textDecoration: 'none' }}>UserProfile</Link></li>
+                        <li><Link to={`/user-profile/${this.state.loggedInUser._id}`} style={{ textDecoration: 'none' }}>Profile</Link></li>
                         <li>
-                            <button onClick={() => this.logoutUser()}>Logout</button>
+                            <button type="button" className="btn btn-primary" onClick={() => this.logoutUser()}>Logout</button>
                         </li>
                     </ul>
                 </nav>

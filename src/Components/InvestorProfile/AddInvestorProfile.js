@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import InvestorProfileService from './services';
-// import { Link } from 'react-router-dom';
-import axios from 'axios';
-
 
 
 class AddInvestorProfile extends Component {
 
-    state = { userError: false, ageGroup: '', education: '', experience: '', profession: '', risk: '', investment: '' }
+    state = { userError: false, ageGroup: '', education: '', experience: '', profession: '', risk: '', investment: '', result: '' }
 
     service = new InvestorProfileService()
 
@@ -21,8 +18,10 @@ class AddInvestorProfile extends Component {
                 experience: experience,
                 profession: profession,
                 risk: risk,
-                investmentAmount: investment,
-            })
+                investment: investment,
+            });
+            console.log(response)
+            this.props.setTheUser(response)
         } else {
             console.log("All fields are mandatory")
             this.setState({ userError: true })
@@ -37,7 +36,7 @@ class AddInvestorProfile extends Component {
     render() {
         return (
             <div>
-                {this.state.userError && <p>Please fill the form</p>}
+                {this.state.userError && <p>PLEASE COMPLETE THE FORM ...</p>}
                 <div id="comboBoxes">
                     <form onSubmit={this.handleFormSubmit}>
 
@@ -56,6 +55,7 @@ class AddInvestorProfile extends Component {
                             <option value="1">Finance, Economy, Management</option>
                             <option value="2">Human Sciences</option>
                             <option value="3">Technology</option>
+                            <option value="4">None</option>
                         </select>
 
                         <label>Experience:</label>
@@ -92,14 +92,10 @@ class AddInvestorProfile extends Component {
                             <option value="2">€5001- €20 000 </option>
                             <option value="3"> €20 001 - €50 000</option>
                             <option value="4"> > €50 000</option>
-
                         </select>
-                        <input type="submit" value="Add Investor Profile" />
-                    </form>
 
-                    {/* <p>Already have account?
-          <Link to={"/"}> Login</Link>
-                </p> */}
+                        <input type="submit" className="btn btn-primary" value="Submit" ></input>
+                    </form>
                 </div>
             </div>
         )

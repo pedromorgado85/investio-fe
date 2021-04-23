@@ -8,13 +8,13 @@ import Login from './Components/Auth/Login';
 import ProtectedRoute from './Components/Auth/ProtectedRoute';
 import Signup from './Components/Auth/Signup';
 import AuthService from './Components/Auth/auth-service';
-import AddInvestorProfile from './Components/InvestorProfile/AddInvestorProfile';
 
 class App extends Component {
 
-  state = { loggedInUser: null }
+  state = { loggedInUser: null, redirect: false }
 
   service = new AuthService()
+
 
   fetchUser = () => {
     if (this.state.loggedInUser === null) {
@@ -32,26 +32,36 @@ class App extends Component {
     }
   }
 
-  getTheUser = (userObj) => {
+  setTheUser = (userObj) => {
     this.setState({
       loggedInUser: userObj
     })
   }
 
-  // componentDidMount()
+
+  // componentDidMount() {
+  //   fetch('http://https://api.polygon.io/v1/open-close/AAPL/2020-10-14?unadjusted=true&apiKey=spjcYpSHqofxI8i3eH5Jkwr74wpFl0x7.typicode.com/users')
+  //     .then(res => res.json())
+  //     .then((data) => {
+  //       this.setState({ stocks: data })
+  //     })
+  //     .catch(console.log)
+  // }
 
   render() {
+
+
     this.fetchUser()
     return (
       <div className="App">
         <div>
-          <Navbar className="Navbar" userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
+          <Navbar className="Navbar" userInSession={this.state.loggedInUser} getUser={this.setTheUser} />
         </div>
         <Switch>
-          <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser} />} />
-          <Route exact path='/login' render={() => <Login getUser={this.getTheUser} />} />
-          <Route exact path='/user-profile' render={() => <AddInvestorProfile getUser={this.getTheUser} />} />
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/users/:id" component={UserProfile} />
+          <Route exact path='/signup' render={(props) => <Signup getUser={this.setTheUser} {...props} />} />
+          <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
+          {/* <Route exact path='/user-profile/:id' render={() => <UserProfile getUser={this.setTheUser} {...props}/>} /> */}
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/user-profile/:id" component={UserProfile} setTheUser={this.setTheUser} />
         </Switch>
       </div>
     );
