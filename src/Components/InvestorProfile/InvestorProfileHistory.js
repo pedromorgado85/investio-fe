@@ -5,8 +5,8 @@ class InvestorProfileHistory extends Component {
 
     render() {
         return (
-            <div class="container">
-                <div class="row align-item-start">
+            <div className="container">
+                <div className="row align-item-start">
                     {this.props.investorProfiles.reverse().map(profile => {
                         return <InvestorProfileCard key={profile._id} profile={profile} />
                     })}

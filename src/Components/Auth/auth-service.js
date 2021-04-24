@@ -9,12 +9,8 @@ class AuthService {
         this.service = service;
     }
 
-    signup = (email, password) => {
-        console.log("body", email, password)
-        return axios.post(`${process.env.REACT_APP_API_URL}/api`, {
-            email: 'Fred@Flintstone.com',
-            password: 'Flintstone'
-        })
+    signup = (name, email, password) => {
+        return this.service.post('/signup', { name, email, password })
             .then(response => {
                 console.log("response", response)
                 return response.data

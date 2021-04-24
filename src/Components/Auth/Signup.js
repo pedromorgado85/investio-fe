@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from './auth-service';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
 
 class Signup extends Component {
 
@@ -15,11 +14,8 @@ class Signup extends Component {
         const email = this.state.email;
         const password = this.state.password;
         console.log("AQUI", name, email, password)
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, {
-            name: name,
-            email: email,
-            password: password,
-        })
+        const response = await this.service.signup(name, email, password)
+        this.props.setTheUser(response)
         console.log("response FE", response)
         // this.service.signup(email, password)
         //     .then(response => {

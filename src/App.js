@@ -59,7 +59,7 @@ class App extends Component {
           <Navbar className="Navbar" userInSession={this.state.loggedInUser} getUser={this.setTheUser} />
         </div>
         <Switch>
-          <Route exact path='/signup' render={(props) => <Signup getUser={this.setTheUser} {...props} />} />
+          <Route exact path='/signup' render={(props) => <Signup setTheUser={this.setTheUser} {...props} />} />
           <Route exact path='/market-research' render={(props) => <MarketResearch getUser={this.setTheUser} {...props} />} />
           <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
           {/* <Route exact path='/user-profile/:id' render={() => <UserProfile getUser={this.setTheUser} {...props}/>} /> */}
