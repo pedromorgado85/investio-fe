@@ -3,10 +3,7 @@ import AddInvestorProfile from '../InvestorProfile/AddInvestorProfile';
 import ProfileHeader from './ProfileHeader'
 import InvestorProfileHistory from '../InvestorProfile/InvestorProfileHistory';
 import AddAssets from '../Assets/AddAssets'
-import PortefolioChart from '../Assets/PortefolioChart';
 import AssetsList from '../Assets/AssetsList';
-import EditUser from './EditUser';
-import MarketResearch from '../../MarketResearch/MarketResearch';
 import MarketResearchService from '../../MarketResearch/MarketResearchService'
 
 class UserProfile extends Component {

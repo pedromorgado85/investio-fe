@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AddAssets from './AddAssets'
+
 
 export default class PortefolioChart extends Component {
 

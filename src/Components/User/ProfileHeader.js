@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EditUser from './EditUser';
+
 
 class ProfileHeader extends Component {
 
@@ -12,12 +12,12 @@ class ProfileHeader extends Component {
                 <p>
                     {this.props.email}
                 </p>
-                <div>
+                {/* <div>
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item"><a class="btn btn-primary" href="/user/:id" role="button">Edit</a></li>
                         <li class="list-group-item"><a class="btn btn-primary" href="#" role="button">Delete</a></li>
                     </ul>
-                </div>
+                </div> */}
             </div>
 
         )
