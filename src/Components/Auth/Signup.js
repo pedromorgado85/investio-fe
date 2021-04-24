@@ -15,7 +15,7 @@ class Signup extends Component {
         const email = this.state.email;
         const password = this.state.password;
         console.log("AQUI", name, email, password)
-        const response = await axios.post('http://localhost:3000/api/signup', {
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, {
             name: name,
             email: email,
             password: password,
