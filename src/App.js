@@ -8,6 +8,7 @@ import Login from './Components/Auth/Login';
 import ProtectedRoute from './Components/Auth/ProtectedRoute';
 import Signup from './Components/Auth/Signup';
 import AuthService from './Components/Auth/auth-service';
+import MarketResearch from './MarketResearch/MarketResearch';
 
 class App extends Component {
 
@@ -59,6 +60,7 @@ class App extends Component {
         </div>
         <Switch>
           <Route exact path='/signup' render={(props) => <Signup getUser={this.setTheUser} {...props} />} />
+          <Route exact path='/market-research' render={(props) => <MarketResearch getUser={this.setTheUser} {...props} />} />
           <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
           {/* <Route exact path='/user-profile/:id' render={() => <UserProfile getUser={this.setTheUser} {...props}/>} /> */}
           <ProtectedRoute user={this.state.loggedInUser} exact path="/user-profile/:id" component={UserProfile} setTheUser={this.setTheUser} />

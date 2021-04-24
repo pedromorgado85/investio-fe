@@ -3,17 +3,31 @@ import AddInvestorProfile from '../InvestorProfile/AddInvestorProfile';
 import ProfileHeader from './ProfileHeader'
 import InvestorProfileHistory from '../InvestorProfile/InvestorProfileHistory';
 import AddAssets from '../Assets/AddAssets'
+import PortefolioChart from '../Assets/PortefolioChart';
+import AssetsList from '../Assets/AssetsList';
+import EditUser from './EditUser';
+import MarketResearch from '../../MarketResearch/MarketResearch';
+import MarketResearchService from '../../MarketResearch/MarketResearchService'
 
 class UserProfile extends Component {
 
-    state = { showInvestorProfileForm: false, }
+    state = { showInvestorProfileForm: false }
+    marketResearchService = new MarketResearchService();
+
+    getEverything = (keyWord) => {
+        this.marketResearchService.getEverything(keyWord)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+    }
 
     render() {
+        this.getEverything('bitcoin')
         return (
             <div>
                 <ProfileHeader name={this.props.loggedInUser.name} email={this.props.loggedInUser.email} ></ProfileHeader>
                 <InvestorProfileHistory investorProfiles={this.props.loggedInUser.investorProfiles}> </InvestorProfileHistory>
-                <AddAssets assets={this.props.loggedInUser.assets}></AddAssets>
+                <AddAssets setTheUser={this.props.setTheUser}></AddAssets>
+                <AssetsList loggedInUser={this.props.loggedInUser}></AssetsList>
                 <input
                     type="file" accept="image/*" multiple={false} />
                 <div>

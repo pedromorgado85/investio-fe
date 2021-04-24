@@ -3,7 +3,7 @@ import AssetsServices from './services';
 
 export default class AddAssets extends Component {
 
-    state = { userError: false, assets: [] };
+    state = { userError: false, portefolio: [] };
     service = new AssetsServices();
 
     handleFormSubmit = async (event) => {
@@ -16,6 +16,7 @@ export default class AddAssets extends Component {
                 amount: amount,
                 unit: unit,
             });
+            console.log(response)
             this.props.setTheUser(response)
         } else {
             console.log("All fields are mandatory")
@@ -55,8 +56,8 @@ export default class AddAssets extends Component {
                         <label>Unit:</label>
                         <select name="unit" value={this.state.unit} onChange={e => this.handleChange(e)} >
                             <option >Please select an option </option>
-                            <option value="1">USD</option>
-                            <option value="2">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
                         </select>
                         <input type="submit" className="btn btn-primary" value="Generate" ></input>
                     </form>

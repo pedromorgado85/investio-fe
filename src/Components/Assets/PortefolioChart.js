@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import AddAssets from './AddAssets'
 
-export default class InvestorProfileCard extends Component {
+export default class PortefolioChart extends Component {
+
     render() {
         return (
             <div className="col">
@@ -8,7 +10,7 @@ export default class InvestorProfileCard extends Component {
                     <div className="card">
                         <img src="..." className="card-img-top" alt="..." />
                         <div className="card-body ">
-                            <h5 className="card-title text-green">{this.props.profile.result}</h5>
+                            <h5 className="card-title text-green">lfgkds</h5>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                         <ul className="list-group list-group-flush">
@@ -17,6 +19,8 @@ export default class InvestorProfileCard extends Component {
                             <li className="list-group-item">A third item</li>
                         </ul>
                         <div className="card-body">
+                            {/* <a href="#" className="card-link">Card link</a>
+                        <a href="#" className="card-link">Another link</a> */}
                         </div>
                     </div>
                 </div>

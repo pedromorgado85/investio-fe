@@ -11,7 +11,6 @@ class InvestorProfileHistory extends Component {
                         return <InvestorProfileCard key={profile._id} profile={profile} />
                     })}
                 </div>
-
             </div>
         )
     }
