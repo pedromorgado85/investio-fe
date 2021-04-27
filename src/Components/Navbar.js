@@ -24,11 +24,13 @@ class Navbar extends Component {
             return (
                 <nav className="nav-style">
                     <ul>
-                        <li>Welcome, {this.state.loggedInUser.email}</li>
+                        <li className="welcome-navbar"> {this.state.loggedInUser.email}</li>
                         <li><Link to={`/user-profile/${this.state.loggedInUser._id}`} style={{ textDecoration: 'none' }}>Profile</Link></li>
-                        <li>
-                            <button type="button" className="btn btn-primary" onClick={() => this.logoutUser()}>Logout</button>
-                        </li>
+                        <div className="container">
+                            <li>
+                                <button type="button" className="btn btn-primary" onClick={() => this.logoutUser()}>Logout</button> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"></span>
+                            </li>
+                        </div>
                     </ul>
                 </nav>
             )

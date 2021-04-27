@@ -1,14 +1,34 @@
 .App {
   text-align: center;
   justify-content: stretch;
+  background-color: #eeeeee;
 }
+.welcome-navbar{
+  font-family: 'Courier New', Courier, monospace,bold;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end);
+}
+.card-text{
+  color: #00adb5;
+}
+.card-title{
+  text-decoration-color: #00adb5;
+}
+
 
 .comboBoxes {
   display : block;
 }
 
-.Navbar{
-  justify-content: end;
+.nav-style{
+  justify-content: left;
+  background: linear-gradient(#8393e468, #525252);
+}
+.container{
+justify-items: end;
 }
 
 .App-logo {
