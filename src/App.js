@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <Navbar className="nav-style" userInSession={this.state.loggedInUser} getUser={this.setTheUser} />
+          <Navbar className="nav-style" loggedInUser={this.state.loggedInUser} getUser={this.setTheUser} />
         </div>
         <Switch>
           <Route exact path='/signup' render={(props) => <Signup setTheUser={this.setTheUser} {...props} />} />

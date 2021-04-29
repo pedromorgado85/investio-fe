@@ -25,8 +25,20 @@
 
 .nav-style{
   justify-content: left;
-  background: linear-gradient(#8393e468, #525252);
 }
+
+.bg-deepblue{
+  background:#393e46
+}
+
+.bg-light-green{
+  background: #aad8d3;
+}
+.bg-dark-green{
+  background: #00adb5;
+}
+
+
 .container{
 justify-items: end;
 }
@@ -69,4 +81,11 @@ justify-items: end;
 .nav-style {
   border-left-style: none;
   justify-content: right;
+}
+
+.card-investor-profile{
+  background: #aad8d3;
+}
+.card-title{
+  color: black;
 }
