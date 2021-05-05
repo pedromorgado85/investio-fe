@@ -37,6 +37,18 @@
 .bg-dark-green{
   background: #00adb5;
 }
+.bg-light-gray{
+  background:#eeeeee;
+}
+
+.text{
+  font-weight: 250;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  color: #00adb5;
+  letter-spacing: 6px;
+  animation: text 3s 1;
+}
 
 
 .container{
@@ -51,6 +63,22 @@ justify-items: end;
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes text {
+  0%{
+    color:black;
+    margin-bottom: -20px;
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: -20px;
+  }
+  85%{
+      letter-spacing: 8px;
+      margin-bottom: -20px;
+    
   }
 }
 

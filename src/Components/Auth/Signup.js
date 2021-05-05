@@ -39,7 +39,7 @@ class Signup extends Component {
 
     render() {
         return (
-            <div>
+            <div className="d-flex justify-content-center align-centre w-100 py-5 h-100 d-inline-block">
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Name:</label>
                     <input type="text" name="name" value={this.state.name} onChange={e => this.handleChange(e)} />
@@ -50,13 +50,11 @@ class Signup extends Component {
                     <label>Password:</label>
                     <input name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
 
-                    <input type="submit" value="Signup" />
+                    <input className="bg-dark-green" type="submit" value="Signup" />
                 </form>
-
                 <p>Already have account?
-          <Link to={"/"}> Login</Link>
+          <Link to={"/login"}> Login</Link>
                 </p>
-
             </div>
         )
     }

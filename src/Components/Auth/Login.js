@@ -30,15 +30,20 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className="d-flex justify-content-center align-centre bg-deepblue">
+                <div className="w-25 py-5 justify-content-centre" >
                 <form onSubmit={this.handleFormSubmit}>
-                    <label>Email:</label>
-                    <input type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
-                    <label>Password:</label>
-                    <input name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-
-                    <input type="submit" className="btn btn-primary" value="Login" />
-                </form>
+                    <div>
+                        <label>Email:</label>
+                        <input type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+                    </div>
+                    <input type="submit" className="bg-dark-green" value="Login" />
+                    </form>
+                </div>
                 <p>Don't have account?
             <Link to={"/signup"}> Signup</Link>
                 </p>

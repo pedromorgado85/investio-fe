@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MarketResearchService from './MarketResearchService';
+import MarketResearchService from './NewsApiService';
 
 
 export default class MarketResearch extends Component {

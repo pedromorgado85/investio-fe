@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class MarketResearchService {
+class NewsApiService {
     constructor() {
         let service = axios.create({
             baseURL: 'https://newsapi.org/v2'
@@ -18,4 +18,4 @@ class MarketResearchService {
 
 }
 
-export default MarketResearchService;
+export default NewsApiService;

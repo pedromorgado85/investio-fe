@@ -9,6 +9,7 @@ import ProtectedRoute from './Components/Auth/ProtectedRoute';
 import Signup from './Components/Auth/Signup';
 import AuthService from './Components/Auth/auth-service';
 import MarketResearch from './MarketResearch/MarketResearch';
+import Home from './Components/Home';
 
 class App extends Component {
 
@@ -59,6 +60,7 @@ class App extends Component {
           <Navbar className="nav-style" loggedInUser={this.state.loggedInUser} getUser={this.setTheUser} />
         </div>
         <Switch>
+          <Route exact path='/' component={Home} />
           <Route exact path='/signup' render={(props) => <Signup setTheUser={this.setTheUser} {...props} />} />
           <Route exact path='/market-research' render={(props) => <MarketResearch getUser={this.setTheUser} {...props} />} />
           <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
