@@ -4,16 +4,16 @@ import ProfileHeader from './ProfileHeader'
 import InvestorProfileHistory from '../InvestorProfile/InvestorProfileHistory';
 import AddAssets from '../Assets/AddAssets'
 import AssetsList from '../Assets/AssetsList';
-import MarketResearchService from '../../MarketResearch/NewsApiService'
+import NewsApiService from '../../MarketResearch/NewsApiService'
 import { Link } from 'react-router-dom';
 
 class UserProfile extends Component {
 
     state = { showInvestorProfileForm: false }
-    marketResearchService = new MarketResearchService();
+    newsApiService = new NewsApiService();
 
     getEverything = (keyWord) => {
-        this.marketResearchService.getEverything(keyWord)
+        this.newsApiService.getEverything(keyWord)
             .then(response => console.log(response))
             .catch(error => console.log(error))
     }
@@ -34,21 +34,23 @@ class UserProfile extends Component {
                     <AddAssets setTheUser={this.props.setTheUser}></AddAssets>
                 </div>
                 <div>
-                <AssetsList loggedInUser={this.props.loggedInUser}></AssetsList>
+                    <AssetsList loggedInUser={this.props.loggedInUser}></AssetsList>
                 </div>
-                <div>
+                <div className="d-flex justify-content-between">
                     <div>
-                        <button type="button" className="btn btn-primary" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
-                        {this.state.showInvestorProfileForm && <AddInvestorProfile setTheUser={this.props.setTheUser} />} {/*passar os props*/}
+                        <div>
+                            <button type="button" className="btn text-white bg-dark-green" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
+                            {this.state.showInvestorProfileForm && <AddInvestorProfile setTheUser={this.props.setTheUser} />} {/*passar os props*/}
+                        </div>
+                    </div>
+                    <div>
+                        <Link to='/news-research'><button type="button" className="btn text-white bg-dark-green">News Research</button></Link>
+                    </div>
+                    <div>
+                        <Link to='/markets'><button type="button" className="btn text-white bg-dark-green">Markets</button></Link>
                     </div>
                 </div>
-                <div>
-                    <Link to='/market-research'>Market Research</Link>
-                </div>
-                <div>
-                    <Link to='/markets'>Markets</Link>
-                </div>
-                </div>)
+            </div>)
     }
 }
 

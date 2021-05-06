@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import MarketResearchService from './NewsApiService';
+import NewsApiService from './NewsApiService';
 
 
-export default class MarketResearch extends Component {
+export default class NewsResearch extends Component {
 
-    state = { marketResearch: null }
-    service = new MarketResearchService()
+    state = { newsResearch: null }
+    service = new NewsApiService()
 
 
     getEverything = (keyword) => {
@@ -13,7 +13,7 @@ export default class MarketResearch extends Component {
             .then(response => {
                 console.log("response", response)
                 this.setState({
-                    marketResearch: response
+                    newsResearch: response
                 })
             })
     }
@@ -38,7 +38,7 @@ export default class MarketResearch extends Component {
         return <div>
             <input type='text' name='keyWord' onChange={e => this.handleChange(e)} />
             <ul>
-                {this.state.marketResearch && this.state.marketResearch.articles.map(item => {
+                {this.state.newsResearch && this.state.newsResearch.articles.map(item => {
                     return <li key={item.url}>{item.title} </li>
                 })}
             </ul>
