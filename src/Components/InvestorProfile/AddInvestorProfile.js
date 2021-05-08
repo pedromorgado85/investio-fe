@@ -94,7 +94,7 @@ class AddInvestorProfile extends Component {
                             <option value="4"> > €50 000</option>
                         </select>
 
-                        <input type="submit" className="btn btn-primary" value="Submit" ></input>
+                        <input type="submit" className="btn bg-dark-green" value="Submit" ></input>
                     </form>
                 </div>
             </div>

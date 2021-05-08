@@ -20,6 +20,7 @@ class UserProfile extends Component {
 
     render() {
         this.getEverything('bitcoin')
+        console.log(this.props.match.params)
         return (
             <div>
                 <input

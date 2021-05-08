@@ -8,9 +8,11 @@ import Login from './Components/Auth/Login';
 import ProtectedRoute from './Components/Auth/ProtectedRoute';
 import Signup from './Components/Auth/Signup';
 import AuthService from './Components/Auth/auth-service';
-import NewsApiService from './MarketResearch/NewsApiService';
+// import NewsApiService from './MarketResearch/NewsApiService';
 import Home from './Components/Home';
 import NewsResearch from './MarketResearch/NewsResearch';
+import MarketsView from './Components/Markets/MarketsView';
+import Stocks from './Components/Markets/Stocks';
 
 class App extends Component {
 
@@ -64,6 +66,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/signup' render={(props) => <Signup setTheUser={this.setTheUser} {...props} />} />
           <Route exact path='/news-research' render={(props) => <NewsResearch getUser={this.setTheUser} {...props} />} />
+          <Route exact path='/markets' component={MarketsView} />
+          <Route exact path='/stocks' render={(props) => <Stocks getState={this.setState} {...props} />} />
           <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
           {/* <Route exact path='/user-profile/:id' render={() => <UserProfile getUser={this.setTheUser} {...props}/>} /> */}
           <ProtectedRoute user={this.state.loggedInUser} exact path="/user-profile/:id" component={UserProfile} setTheUser={this.setTheUser} />

@@ -1,29 +1,40 @@
 import React, { Component } from 'react';
 import PolygonApiService from './PolygonApiService';
 
-
 export default class Stocks extends Component {
 
-    state = { stocks: null, unadjusted: true }
+    state = { stocksTicker: "", date: "", unadjusted: true, open: undefined, }
     service = new PolygonApiService()
 
-
-    getEverything = (stocks) => {
-        return this.service.getEverything(stocks)
+    getStocksOpenClose = (stocksTicker, date) => {
+        return this.service.getStocksOpenClose(stocksTicker, date)
             .then(response => {
                 console.log("response", response)
                 this.setState({
-                    stocks: response
+                    stocksTicker: response,
+                    date: response
                 })
             })
     }
+
+    handleFormSubmit = async (event) => {
+        console.log("YOU FOUND ME")
+        event.preventDefault();
+        const response = await this.service.getStocksOpenClose(this.state.stocksTicker, this.state.date);
+        console.log(response)
+        this.setState(response)
+    }
+
     handleChange = (event) => {
-        const { value } = event.target;
-        this.getEverything(value)
+        console.log("HANDLECHANGE")
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
     }
 
     // componentDidMount() {
-    //     this.getEverything(this.state.keyWord)
+    //     this.getStocksOpenClose(stocksTicker, date)
+    // }
+
 
     // }
 
@@ -33,15 +44,35 @@ export default class Stocks extends Component {
     //     }
     // }
 
+
+
     render() {
-        console.log(this.state)
-        return <div>
-            <input type='text' name='keyWord' onChange={e => this.handleChange(e)} />
-            <ul>
-                {this.state.stocks && this.state.stocks.open.map(item => {
-                    return <li key={item.url}>{item.high} </li>
-                })}
-            </ul>
-        </div>
+
+        return (
+            <div className="d-flex align-items-center justify-content-around">
+                <form onSubmit={this.handleFormSubmit}>
+                    <div>
+                        <label>Stock Ticker</label>
+                        <input type="text" name="stocksTicker" value={this.state.stocksTicker} onChange={e => this.handleChange(e)} />
+                    </div>
+                    <div>
+                        <label>Date</label>
+                        <input type="text" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
+                    </div>
+                    <input type="submit" className="btn bg-dark-green" value="Search" ></input>
+                </form>
+                {this.state.open &&
+                    <div>
+                        <ul className="list-group list-group-flush">
+                            <li className="list-group-item" >Ticker:{this.state.stocksTicker}</li>
+                            <li className="list-group-item">Open:{this.state.open}</li>
+                            <li className="list-group-item">Close:{this.state.close}</li>
+                            <li className="list-group-item">High:{this.state.high}</li>
+                            <li className="list-group-item">Low:{this.state.low}</li>
+                            <li className="list-group-item">Volume:{this.state.volume}</li>
+                        </ul>
+                    </div>}
+            </div>
+        )
     }
 }
