@@ -46,7 +46,7 @@ class AddInvestorProfile extends Component {
                             <option value="1">18 - 29</option>
                             <option value="2"> 30 - 50</option>
                             <option value="3"> 51 - 70</option>
-                            <option value="4"> > 70</option>
+                            <option value="4"> + 70</option>
                         </select>
 
                         <label>Education:</label>
@@ -55,6 +55,8 @@ class AddInvestorProfile extends Component {
                             <option value="1">Finance, Economy, Management</option>
                             <option value="2">Human Sciences</option>
                             <option value="3">Technology</option>
+                            <option value="3">Art</option>
+                            <option value="3">Engeneering</option>
                             <option value="4">None</option>
                         </select>
 
@@ -63,16 +65,17 @@ class AddInvestorProfile extends Component {
                             <option >Please select an option</option>
                             <option value="1">Never Invested</option>
                             <option value="2"> Invested only on simple products</option>
-                            <option value="3"> > 1 Investment on complex products</option>
+                            <option value="3"> Invested on complex products</option>
                         </select>
 
                         <label>Profession:</label>
                         <select name="profession" value={this.state.profession} onChange={e => this.handleChange(e)} >
                             <option value="">Please select an option</option>
                             <option value="1"> Management, Banking and Finance</option>
-                            <option value="2"> Legal</option>
-                            <option value="3"> Engineering</option>
-                            <option value="4"> Hospitality</option>
+                            <option value="2"> Lawyer</option>
+                            <option value="2"> Administrative</option>
+                            <option value="3"> Engineer</option>
+                            <option value="4"> Hospitality professional</option>
                         </select>
 
                         <label>Risk Apettite(1-low && 5-high ):</label>
@@ -91,7 +94,7 @@ class AddInvestorProfile extends Component {
                             <option value="1">€500 - €5000</option>
                             <option value="2">€5001- €20 000 </option>
                             <option value="3"> €20 001 - €50 000</option>
-                            <option value="4"> > €50 000</option>
+                            <option value="4"> + €50 000</option>
                         </select>
 
                         <input type="submit" className="btn bg-dark-green" value="Submit" ></input>

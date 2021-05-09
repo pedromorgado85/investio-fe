@@ -23,10 +23,10 @@ export default class MarketsView extends Component {
                     <h3 className="m-3 p-5">Markets</h3>
                     <div className="d-flex align-items-between justify-content-center">
                         <p>Follow up !</p>
-                        <Link to="/stocks"><button type="button" className="btn text-white bg-dark-green">Stocks</button></Link>
-                        <Link to="/crypto"><button type="button" className="btn text-white bg-dark-green">Crypto</button></Link>
-                        <Link to="/forex"><button type="button" className="btn text-white bg-dark-green">Forex</button></Link>
-                        <Link to="/bonds"><button type="button" className="btn text-white bg-dark-green">Bonds</button></Link>
+                        <Link to="/stocks"><button type="button" className="text-white bg-dark-green">Stocks</button></Link>
+                        <Link to="/crypto"><button type="button" className="text-white bg-dark-green">Crypto</button></Link>
+                        <Link to="/forex"><button type="button" className="text-white bg-dark-green">Forex</button></Link>
+                        <Link to="/bonds"><button type="button" className="text-white bg-dark-green">Bonds</button></Link>
                     </div>
                 </div>
             </div>

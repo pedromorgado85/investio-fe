@@ -11,6 +11,10 @@
   width: 30em;
   animation: type 4s steps(60, end);
 }
+
+.figure{
+    animation: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 .card-text{
   color: #00adb5;
 }
@@ -64,6 +68,9 @@ justify-items: end;
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .figure{
+    animation: figure infinite 20s linear;
+  }
 }
 
 @keyframes text {
@@ -103,6 +110,14 @@ justify-items: end;
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes figure {
+  from {
+    transform: translate(0deg);
+  }
+  to {
+    transform: translate(180deg);
   }
 }
 

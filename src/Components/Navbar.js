@@ -17,7 +17,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="d-flex justify-content-between align-items-center p-3 bg-deepblue">
-                <Link to='/' className="text-white text-decoration-none fw-bolder">Invest.IO</Link>
+                <Link to='/' className="text-white text-decoration-none fw-bolder" >Invest.IO</Link>
                 <div className="d-flex align-items-center">
                     {this.props.loggedInUser &&
                         <Fragment>

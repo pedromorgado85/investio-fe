@@ -19,10 +19,13 @@ class UserProfile extends Component {
     }
 
     render() {
-        this.getEverything('bitcoin')
+        this.getEverything()
         console.log(this.props.match.params)
         return (
             <div>
+                <div>
+                    <img src={process.env.PUBLIC_URL + 'avatar.svg'} alt="profilePic"></img>
+                </div>
                 <input
                     type="file" accept="image/*" multiple={false} />
                 <div>
@@ -40,15 +43,15 @@ class UserProfile extends Component {
                 <div className="d-flex justify-content-between">
                     <div>
                         <div>
-                            <button type="button" className="btn text-white bg-dark-green" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
-                            {this.state.showInvestorProfileForm && <AddInvestorProfile setTheUser={this.props.setTheUser} />} {/*passar os props*/}
+                            <button type="button" className="text-bg-deepblue bg-dark-green" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
+                            {this.state.showInvestorProfileForm && <AddInvestorProfile setTheUser={this.props.setTheUser} />} {/*passar as props*/}
                         </div>
                     </div>
                     <div>
-                        <Link to='/news-research'><button type="button" className="btn text-white bg-dark-green">News Research</button></Link>
+                        <Link to='/news-research'><button type="button" className="text-bg-deepblue bg-dark-green ">News Research</button></Link>
                     </div>
                     <div>
-                        <Link to='/markets'><button type="button" className="btn text-white bg-dark-green">Markets</button></Link>
+                        <Link to='/markets'><button type="button" className="text-bg-deepblue bg-dark-green">Markets</button></Link>
                     </div>
                 </div>
             </div>)

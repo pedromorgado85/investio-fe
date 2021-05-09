@@ -59,7 +59,7 @@ export default class Stocks extends Component {
                         <label>Date</label>
                         <input type="text" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
                     </div>
-                    <input type="submit" className="btn bg-dark-green" value="Search" ></input>
+                    <input type="submit" className="bg-dark-green" value="Search" ></input>
                 </form>
                 {this.state.open &&
                     <div>
