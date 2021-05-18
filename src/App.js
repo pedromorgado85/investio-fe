@@ -13,6 +13,7 @@ import Home from './Components/Home';
 import NewsResearch from './MarketResearch/NewsResearch';
 import MarketsView from './Components/Markets/MarketsView';
 import Stocks from './Components/Markets/Stocks';
+import CryptoCurrency from './Components/Markets/CryptoCurrency';
 
 class App extends Component {
 
@@ -68,6 +69,7 @@ class App extends Component {
           <Route exact path='/news-research' render={(props) => <NewsResearch getUser={this.setTheUser} {...props} />} />
           <Route exact path='/markets' component={MarketsView} />
           <Route exact path='/stocks' render={(props) => <Stocks getState={this.setState} {...props} />} />
+          <Route exact path='/crypto' render={(props) => <CryptoCurrency getState={this.setState} {...props} />} />
           <Route exact path='/login' render={(props) => <Login getUser={this.setTheUser} {...props} />} />
           {/* <Route exact path='/user-profile/:id' render={() => <UserProfile getUser={this.setTheUser} {...props}/>} /> */}
           <ProtectedRoute user={this.state.loggedInUser} exact path="/user-profile/:id" component={UserProfile} setTheUser={this.setTheUser} />

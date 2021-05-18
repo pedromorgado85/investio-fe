@@ -59,7 +59,7 @@ export default class AddAssets extends Component {
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                         </select>
-                        <input type="submit" className="btn btn-primary" value="Generate" ></input>
+                        <input type="submit" className="bg-dark-green text-white" value="Generate" ></input>
                     </form>
                 </div>
             </div>

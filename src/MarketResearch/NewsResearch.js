@@ -36,10 +36,13 @@ export default class NewsResearch extends Component {
     render() {
         console.log(this.state)
         return <div>
+            <div>
+                <h2>Know the latest news on the topic of your choice</h2>
+            </div>
             <input type='text' name='keyWord' onChange={e => this.handleChange(e)} />
             <ul className="list-group">
                 {this.state.newsResearch && this.state.newsResearch.articles.map(item => {
-                    return <li className="list-group-item list-group-item-action" key={item.url}> <a href={item.url}>{item.title}</a></li>
+                    return <li className="bg-dark list-group-item list-group-item-action" key={item.url}> <a href={item.url}>{item.title}</a></li>
                 })}
             </ul>
         </div>

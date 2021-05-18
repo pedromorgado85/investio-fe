@@ -24,7 +24,6 @@ export default class Home extends Component {
                         <h3>Portfolio Management</h3>
                         <p>Manage your investment portfolio in a easy way!</p>
                         <Link to="/signup"><button type="button" className="btn text-white bg-dark-green">Signup</button></Link>
-                        
                     </div>
                 </div>
                 <div className="d-flex justify-content-around align-items-center bg-dark-green">

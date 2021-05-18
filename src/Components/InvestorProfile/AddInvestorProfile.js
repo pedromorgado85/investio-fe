@@ -40,7 +40,7 @@ class AddInvestorProfile extends Component {
                 <div id="comboBoxes">
                     <form onSubmit={this.handleFormSubmit}>
 
-                        <label>Age:</label>
+                        <label>Age Group:</label>
                         <select name="ageGroup" value={this.state.ageGroup} onChange={e => this.handleChange(e)} >
                             <option >Please select an option</option>
                             <option value="1">18 - 29</option>
@@ -56,7 +56,7 @@ class AddInvestorProfile extends Component {
                             <option value="2">Human Sciences</option>
                             <option value="3">Technology</option>
                             <option value="3">Art</option>
-                            <option value="3">Engeneering</option>
+                            <option value="3">Engineering</option>
                             <option value="4">None</option>
                         </select>
 
@@ -97,7 +97,7 @@ class AddInvestorProfile extends Component {
                             <option value="4"> + €50 000</option>
                         </select>
 
-                        <input type="submit" className="btn bg-dark-green" value="Submit" ></input>
+                        <input type="submit" className="bg-dark-green text-white" value="Submit" ></input>
                     </form>
                 </div>
             </div>

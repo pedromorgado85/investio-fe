@@ -40,18 +40,23 @@ class UserProfile extends Component {
                 <div>
                     <AssetsList loggedInUser={this.props.loggedInUser}></AssetsList>
                 </div>
-                <div className="d-flex justify-content-between">
-                    <div>
+                <div className="d-flex justify-content-around align-items-center bg-light-gray">
+                    <div className="text-start w-25 py-5" >
+                        <div className="text-start">
+                            <h5>Update a new Investor Profile</h5>
                         <div>
-                            <button type="button" className="text-bg-deepblue bg-dark-green" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
+                            <button type="button" className="text-white bg-dark-green" onClick={() => this.setState({ showInvestorProfileForm: !this.state.showInvestorProfileForm })}>Add Investor Profile</button>
                             {this.state.showInvestorProfileForm && <AddInvestorProfile setTheUser={this.props.setTheUser} />} {/*passar as props*/}
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div>
                     <div>
-                        <Link to='/news-research'><button type="button" className="text-bg-deepblue bg-dark-green ">News Research</button></Link>
+                        <Link to='/news-research'><button type="button" className="text-white bg-dark-green ">News Research</button></Link>
                     </div>
                     <div>
-                        <Link to='/markets'><button type="button" className="text-bg-deepblue bg-dark-green">Markets</button></Link>
+                        <Link to='/markets'><button type="button" className="text-white bg-dark-green">Markets</button></Link>
                     </div>
                 </div>
             </div>)
